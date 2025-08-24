@@ -432,7 +432,7 @@ endif()
 # libnotcurses-ffi (ffi shared library)
 if(${BUILD_FFI_LIBRARY})
 file(GLOB NCFFISRCS CONFIGURE_DEPENDS src/libffi/*.c src/libffi/*.cpp)
-add_library(notcurses-ffi SHARED ${NCFFISRCS})
+add_library(notcurses-ffi SHARED ${NCFFISRCS} ${COMPATSRC})
 target_compile_options(notcurses-ffi PUBLIC -fkeep-inline-functions)
 target_compile_definitions(notcurses-ffi PUBLIC NOTCURSES_FFI)
 # don't want these on freebsd/dragonfly/osx

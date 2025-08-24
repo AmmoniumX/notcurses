@@ -27,9 +27,7 @@ extern "C" {
 #define wcwidth(w) 1 // FIXME lol, no
 #define wcswidth(w, s) (int)(wcslen(w)) // FIXME lol, no
 #elif defined(__MINGW32__)                        // Windows
-#include <string.h>
-#define wcwidth(w) 1 // FIXME lol, no
-#define wcswidth(w, s) (int)(wcslen(w)) // FIXME lol, no
+#include "ncwcwidth.h" // Add wcwidth, wcswidth implementations
 #define htole(x) (x) // FIXME are all windows installs LE? ugh
 #else                                             // BSDs
 #include <sys/endian.h>

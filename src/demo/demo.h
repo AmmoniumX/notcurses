@@ -10,6 +10,7 @@
 #include <builddef.h>
 #include <version.h>
 #include "compat/compat.h"
+#include "compat/ncwcwidth.h"
 
 #ifdef __cplusplus
 extern "C" {

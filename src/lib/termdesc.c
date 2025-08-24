@@ -1065,18 +1065,19 @@ apply_term_heuristics(tinfo* ti, const char* tname, queried_terminals_e qterm,
     return -1;
   }
   tname = newname;
-  // run a wcwidth(⣿) to guarantee libc Unicode 3 support, independent of term
-  if(wcwidth(L'⣿') < 0){
-    ti->caps.braille = false;
-  }
-  // run a wcwidth(🬸) to guarantee libc Unicode 13 support, independent of term
-  if(wcwidth(L'🬸') < 0){
-    ti->caps.sextants = false;
-  }
-  // run a wcwidth(𜴀) to guarantee libc Unicode 16 support, independent of term
-  if(wcwidth(L'𜴀') < 0){
-    ti->caps.octants = false;
-  }
+  // // These tests don't work if we package our own wcwidth
+  // // run a wcwidth(⣿) to guarantee libc Unicode 3 support, independent of term
+  // if(wcwidth(L'⣿') < 0){
+  //   ti->caps.braille = false;
+  // }
+  // // run a wcwidth(🬸) to guarantee libc Unicode 13 support, independent of term
+  // if(wcwidth(L'🬸') < 0){
+  //   ti->caps.sextants = false;
+  // }
+  // // run a wcwidth(𜴀) to guarantee libc Unicode 16 support, independent of term
+  // if(wcwidth(L'𜴀') < 0){
+  //   ti->caps.octants = false;
+  // }
   ti->termname = tname;
   return 0;
 }
